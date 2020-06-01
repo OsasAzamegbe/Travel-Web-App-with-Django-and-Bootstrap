@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load bootstrap4 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="device-width, initial-scale=1, shrink-to-fit=no" >
+    <title>{% block title %}Travel Blog{% endblock %}</title>
+</head>
+<body>
+    <div class="container"><br/><br/>
+        {% if messages %}
+            {% for message in messages %}
+<!--                <div class="row">-->
+                    {% if message.tags == "error" or message.tags == "debug" %}
+                        <div class="alert alert-danger" align="center">{{ message }}</div>
+                    {% else %}
+                        <div class="alert alert-{{message.tags}}" align="center">{{ message }}</div>
+                    {% endif %}
+<!--                </div>-->
+            {% endfor %}
+          {% endif %}
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

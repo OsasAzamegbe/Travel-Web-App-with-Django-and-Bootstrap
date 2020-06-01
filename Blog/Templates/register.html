@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <button type="submit" class=" btn-sm btn btn-raised btn-outline-info waves-effect " ><a href="/">Home</a></button><br/>
+    <button type="submit" class=" btn-sm btn btn-raised btn-outline-info waves-effect " ><a href="/login">Login</a></button>
+    <h1>Register</h1><br/><br/>
+
+    <form id="register-form" action="/registerUser/" method="post" >{% csrf_token %}
+        <div class="form-group row">
+            <label for="firstname" class="col-form-label col-sm-2">First Name</label>
+            <div class="col-sm-5">
+                <input name="firstname" id="firstname" class="form-control" maxlength="90" datatype="text" placeholder="Enter your first name"/>
+            </div>
+
+        </div>
+        <div class="form-group row">
+            <label for="lastname" class="col-form-label col-sm-2">Last Name</label>
+            <div class="col-sm-5">
+                <input name="lastname" id="lastname" class="form-control" maxlength="90" datatype="text" placeholder="Enter your last name"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="username" class="col-form-label col-sm-2">Username</label>
+            <div class="col-sm-5">
+                <input name="username" id="username" class="form-control" maxlength="90" datatype="text" placeholder="Username"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="email" class="col-form-label col-sm-2">Email Address</label>
+            <div class="col-sm-5">
+                <input name="email" id="email" datatype="email" class="form-control" placeholder="Email address"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="password" class="col-form-label col-sm-2">Password</label>
+            <div class="col-sm-5">
+                <input name="password" id="password" class="form-control" datatype="password" placeholder="Password"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="password_confirm" class="col-form-label col-sm-2">Confirm Password</label>
+            <div class="col-sm-5">
+                <input name="password_confirm" id="password_confirm" class="form-control" datatype="password" placeholder="Enter password again"/>
+            </div>
+        </div>
+        <br/>
+        <div class="form-group row col-sm-2">
+            <button type="submit" class=" btn-lg btn btn-raised btn-outline-info waves-effect ">Sign Up</button>
+        </div>
+
+    </form>
+
+
+{% endblock %}
