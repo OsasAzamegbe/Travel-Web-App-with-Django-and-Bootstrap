@@ -59,7 +59,7 @@ def register_user(request):
                 new_user = User(first_name=first_name, username=username,
                                 surname=last_name, email=email, password=password)
                 new_user.save()
-                messages.success(request, f'@{username}\'s profile has been created successfully!')
+                messages.success(request, f'Your profile @{username}\'s has been created successfully!')
                 return HttpResponseRedirect('/login/')
             else:
                 messages.error(request, f'An account with the username: @{username} '
@@ -68,10 +68,3 @@ def register_user(request):
 
     return HttpResponseRedirect('/register/')
 
-    # empty_fields = ""
-    # for item in post:
-    #     if post[item] == '':
-    #         empty_fields += item + ", "
-    # if empty_fields:
-    #     register(request, empty_fields)
-    #     return HttpResponseRedirect('/register/')
