@@ -10,9 +10,9 @@ from .models import User
 def index(request):
     return render(request, 'index.html')
 
-
-def login(request):
-    return render(request, 'login.html')
+#
+# def login(request):
+#     return render(request, 'login.html')
 
 
 def register(request):
@@ -20,7 +20,6 @@ def register(request):
 
 
 def register_user(request):
-
     post = request.POST
     check = True
     if post:
