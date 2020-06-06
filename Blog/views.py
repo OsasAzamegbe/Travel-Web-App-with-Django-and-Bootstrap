@@ -20,7 +20,6 @@ def register(request):
 
 
 def register_user(request):
-
     post = request.POST
     check = True
     if post:
