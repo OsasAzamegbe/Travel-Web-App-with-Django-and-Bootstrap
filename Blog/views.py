@@ -23,7 +23,6 @@ def register_user(request):
 
     post = request.POST
     check = True
-    # if post['username'] != '':
     if post:
         if post['firstname']:
             first_name = post['firstname']
