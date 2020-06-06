@@ -1,4 +1,5 @@
 - Add Login-Logout functionality (sessions)
+	- create login form on the login template
 - Create user views, with ability to upload high quality travel Images
 - Implement maps with Google Maps API
 - Implement search function for site
