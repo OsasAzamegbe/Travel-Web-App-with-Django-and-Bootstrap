@@ -1,28 +1,37 @@
 {% extends 'base.html' %}
-
+{% load crispy_forms_tags %}
 {% block content %}
 
 
      <a role="button" class=" btn-sm btn btn-raised btn-outline-info waves-effect " href="{% url 'index' %}">Home</a><br/>
      <a role="button" class=" btn-sm btn btn-raised btn-outline-info waves-effect " href="{% url 'register' %}">Register</a>
 
-     <h1>Login</h1><br/><br/>
-     <form id="login-form" action="#" method="post"  > {% csrf_token %}
-          <div class="form-group row">
-               <label for="username" class="col-form-label col-sm-2">Username</label>
-               <input id="username" class="form-control col-sm-5" datatype="text" placeholder="Enter your username or email address"/>
-          </div>
+     <div class="container-fluid">
+          <form method="POST">{% csrf_token %}
+               <fieldset class="form-group">
+                    <legend class="border-bottom mb-4 pb-2">Sign In</legend>
+                    {{ form|crispy }}
+               </fieldset>
+               <div class="form-group">
+                    <button class="btn btn-raised waves-effect btn-outline-info col-sm-1" type="submit">Sign in</button>
+               </div>
+               <small class="text-muted">Don't have an account yet? <a class="ml-2 pb-4" href="{% url 'register' %}"><mark>Sign up</mark></a></small>
+          </form>
+     </div>
+<!--     -->
+<!--     <h1>Login</h1><br/><br/>-->
+<!--     <form id="login-form" action="#" method="post"  > {% csrf_token %}-->
+<!--          <div class="form-group row">-->
+<!--               <label for="username" class="col-form-label col-sm-2">Username</label>-->
+<!--               <input id="username" class="form-control col-sm-5" datatype="text" placeholder="Enter your username or email address"/>-->
+<!--          </div>-->
 
-          <div class="form-group row">
-               <label for="password" class="col-form-label col-sm-2">Password</label>
-               <input id="password" class="form-control col-sm-5" datatype="password" placeholder="Enter your password"/>
-          </div>
-          <br/>
-          <div class="form-group row">
-               <label class="col-sm-6"> </label>
-               <button class="btn btn-raised waves-effect btn-outline-info col-sm-1" type="submit">Log in</button>
-          </div>
-          <small class="text-muted">Don't have an account yet? <a class="ml-2" href="{% url 'register' %}"><mark>Sign up</mark></a></small>
-     </form>
+<!--          <div class="form-group row">-->
+<!--               <label for="password" class="col-form-label col-sm-2">Password</label>-->
+<!--               <input id="password" class="form-control col-sm-5" datatype="password" placeholder="Enter your password"/>-->
+<!--          </div>-->
+<!--          <br/>-->
+<!--          -->
+<!--     </form>-->
 
 {% endblock %}
