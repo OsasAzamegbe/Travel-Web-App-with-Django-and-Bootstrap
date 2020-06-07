@@ -3,8 +3,23 @@
 {% block content %}
     <a role="button" class=" btn-sm btn btn-raised btn-outline-info waves-effect " href="{% url 'index' %}">Home</a><br/>
     <a role="button" class=" btn-sm btn btn-raised btn-outline-info waves-effect " href="{% url 'login' %}">Login</a>
-    <h1>Register</h1><br/><br/>
+<!--    <h1>Register</h1><br/><br/>-->
+    <div class="container-fluid">
+        <form method="POST">{% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4 pb-2">Sign Up</legend>
+                {{ form.as_p}}
+            </fieldset>
 
+            <div class="form-group row ">
+                <label class="col-sm-6"> </label>
+                <button type="submit" class="  btn btn-raised btn-outline-info waves-effect col-sm-1">Sign Up</button>
+            </div>
+            <div class="border-top pt-2">
+                <small class="text-muted">Already have an account? <a class="ml-2" href="{% url 'login' %}"><mark>Sign in</mark></a> </small>
+            </div>
+        </form>
+    </div>
     <form id="register-form" action="{% url 'registerUser' %}" method="post" >{% csrf_token %}
         <div class="form-group row">
             <label for="firstname" class="col-form-label col-sm-2">First Name</label>
@@ -41,7 +56,7 @@
             <button type="submit" class="  btn btn-raised btn-outline-info waves-effect col-sm-1">Sign Up</button>
         </div>
 
-        <small class="text-muted">Already have an account? <a class="ml-2" href="{% url 'login' %}"><mark>Login here</mark></a> </small>
+        <small class="text-muted">Already have an account? <a class="ml-2" href="{% url 'login' %}"><mark>Sign in</mark></a> </small>
 
     </form>
 
