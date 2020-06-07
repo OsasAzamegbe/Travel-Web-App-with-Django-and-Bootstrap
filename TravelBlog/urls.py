@@ -20,9 +20,9 @@ from Blog import views as blog_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', blog_views.index),
+    path('', blog_views.index, name='index'),
     path('login/', auth_views.LoginView.as_view(template_name='Login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='Logout.html'), name='logout'),
-    path('register/', blog_views.register),
-    path('registerUser/', blog_views.register_user),
+    path('register/', blog_views.register, name='register'),
+    path('registerUser/', blog_views.register_user, name='registerUser'),
 ]

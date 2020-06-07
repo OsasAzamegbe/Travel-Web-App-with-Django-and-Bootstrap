@@ -1,5 +1,6 @@
 - Add Login-Logout functionality (sessions) === IN PROGRESS
 	- create login form on the login template === DONE
+	- use crispy forms for login and register === IN PROGRESS
 - Create Navbar 
 - Create user views, with ability to upload high quality travel Images
 - Implement maps with Google Maps API

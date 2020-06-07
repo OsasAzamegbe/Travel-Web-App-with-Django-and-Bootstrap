@@ -2,8 +2,9 @@
 
 {% block content %}
 
+
+    <a role="button" class=" btn-sm btn btn-raised btn-outline-info waves-effect " href="{% url 'login' %}">Login</a><br/>
+    <a role="button" class=" btn-sm btn btn-raised btn-outline-info waves-effect " href="{% url 'register' %}">Register</a>
     <h1>Home page</h1>
-    <button type="submit" class=" btn-sm btn btn-raised btn-outline-info waves-effect " ><a href="/login">Login</a></button><br/>
-    <button type="submit" class=" btn-sm btn btn-raised btn-outline-info waves-effect "><a href="/register">Register</a></button>
 
 {% endblock %}
