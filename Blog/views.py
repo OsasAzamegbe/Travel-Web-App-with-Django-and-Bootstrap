@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from .models import User
 from .forms import UserRegisterForm
 
@@ -30,6 +31,7 @@ def register(request):
     return render(request, 'register.html', {'form': form})
 
 
+@login_required
 def profile(request):
     return render(request, 'users/profile.html')
 

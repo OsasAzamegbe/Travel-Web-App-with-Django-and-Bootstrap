@@ -1,7 +1,10 @@
-- Add Login-Logout functionality (sessions) === IN PROGRESS
+- Add Login-Logout functionality (sessions) === DONE
 	- create login form on the login template === DONE
-	- use crispy forms for login and register === IN PROGRESS
-- Create Navbar 
+	- use crispy forms for login and register === DONE
+	- Login-Logout === DONE
+	- Profile route === DONE
+- Create Navbar === IN PROGRESS
+	- Design Navbar === IN PROGRESS
 - Create user views, with ability to upload high quality travel Images
 - Implement maps with Google Maps API
 - Implement search function for site
