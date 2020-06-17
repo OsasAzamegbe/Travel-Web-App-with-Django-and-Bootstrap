@@ -11,6 +11,9 @@
 </head>
 <body>
     <div class="container"><br/><br/>
+        <a role="button" class=" btn-sm btn btn-raised btn-outline-info waves-effect " href="{% url 'index' %}">Home</a><br/>
+        <a role="button" class=" btn-sm btn btn-raised btn-outline-info waves-effect " href="{% url 'register' %}">Register</a><br/>
+        <a role="button" class=" btn-sm btn btn-raised btn-outline-info waves-effect " href="{% url 'login' %}">Login</a>
         {% if messages %}
             {% for message in messages %}
 <!--                <div class="row">-->

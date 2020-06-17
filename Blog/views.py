@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from .models import User
@@ -22,8 +23,8 @@ def register(request):
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
-            messages.success(request, f'Your profile @{username} has been created successfully!')
-            return HttpResponseRedirect('/login/')
+            messages.success(request, f'Welcome {username}, your profile  has been created successfully! You can now login.')
+            return redirect('login')
     else:
         form = UserRegisterForm()
     return render(request, 'register.html', {'form': form})

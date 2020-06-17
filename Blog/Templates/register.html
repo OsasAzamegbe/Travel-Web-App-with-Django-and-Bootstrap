@@ -1,8 +1,7 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
-    <a role="button" class=" btn-sm btn btn-raised btn-outline-info waves-effect " href="{% url 'index' %}">Home</a><br/>
-    <a role="button" class=" btn-sm btn btn-raised btn-outline-info waves-effect " href="{% url 'login' %}">Login</a>
+
 
     <div class="container-fluid">
         <form method="POST">{% csrf_token %}
