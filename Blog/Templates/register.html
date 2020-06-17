@@ -3,11 +3,11 @@
 {% block content %}
     <a role="button" class=" btn-sm btn btn-raised btn-outline-info waves-effect " href="{% url 'index' %}">Home</a><br/>
     <a role="button" class=" btn-sm btn btn-raised btn-outline-info waves-effect " href="{% url 'login' %}">Login</a>
-<!--    <h1>Register</h1><br/><br/>-->
+
     <div class="container-fluid">
         <form method="POST">{% csrf_token %}
             <fieldset class="form-group">
-                <legend class="border-bottom mb-4 pb-2">Sign Up</legend>
+                <legend class="border-bottom mb-4 pb-2 h2">Sign Up</legend>
                 {{ form|crispy}}
             </fieldset>
 
