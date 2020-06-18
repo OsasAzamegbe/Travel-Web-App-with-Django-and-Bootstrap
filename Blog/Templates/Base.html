@@ -10,15 +10,48 @@
     <title>{% block title %}Travel Blog{% endblock %}</title>
 </head>
 <body>
-    <div class="container"><br/><br/>
-        <a role="button" class=" btn-sm btn btn-raised btn-outline-info waves-effect " href="{% url 'index' %}">Home</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+        <a class="navbar-brand text-monospace ml-4 mr-4"href="{% url 'index' %}">BINI</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-4 ">
+                <a class="nav-item nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="#">Map</a>
+                <a class="nav-item nav-link" href="#">Trending Places</a>
+            </div>
+            <!-- <div class="navbar-nav ml-auto">
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-light my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div> -->
+           
+            {% if user.is_authenticated %}
+                <div class="navbar-nav ml-auto mr-4">
+                    <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
+                    <a class="nav-item nav-link btn btn-outline-dark waves-effect ml-4" href="{% url 'logout' %}">Sign Out</a>
+                </div>                         
+            {% else %}
+                <div class="navbar-nav ml-auto mr-4">
+                    <a class="nav-item nav-link" href="{% url 'login' %}">Sign In</a>
+                    <a class="nav-item nav-link btn btn-outline-dark waves-effect ml-4" href="{% url 'register' %}">Sign Up</a>
+                </div>
+            {% endif %}
+          
+        </div>
+      </nav>
+    <div class="container">
+        
+        <!-- <a role="button" class=" btn-sm btn btn-raised btn-outline-info waves-effect " href="{% url 'index' %}">Home</a>
         {% if user.is_authenticated %}
             <a role="button" class=" btn-sm btn btn-raised btn-outline-info waves-effect " href="{% url 'profile' %}">Profile</a>
             <a role="button" class=" btn-sm btn btn-raised btn-outline-info waves-effect " href="{% url 'logout' %}">Logout</a>
         {% else %}
             <a role="button" class=" btn-sm btn btn-raised btn-outline-info waves-effect " href="{% url 'register' %}">Register</a>
             <a role="button" class=" btn-sm btn btn-raised btn-outline-info waves-effect " href="{% url 'login' %}">Login</a>
-        {% endif %}
+        {% endif %} -->
         {% if messages %}
             {% for message in messages %}
 <!--                <div class="row">-->
