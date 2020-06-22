@@ -65,6 +65,7 @@ body{
     --accent-color: #df8217;
     --background-color: white;
     --transition-delay: 1s;
+    --text-color: black;
 
     background-color: var(--background-color);
     color: var(--text-color);

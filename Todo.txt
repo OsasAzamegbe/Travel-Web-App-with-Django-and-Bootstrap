@@ -5,14 +5,14 @@
 	- Profile route === DONE
 - Create Navbar === DONE
 	- Design Navbar === DONE
-- Implement night mode === IN PROGRESS 
+- Implement night mode === IN PROGRESS
 	-Add night-mode feature === IN PROGRESS
 	-include automatic evening time switch-on functionality
 - Create user views, with ability to upload high quality travel Images, user profile, settings, etc.
-- Implement maps with Google Maps API
+- Implement maps with Google Maps API 
 - Implement search function for site
 - Develop frontend of Index page
-- Develop frontend of Login page
-- Develop frontend of Register page
+- Develop frontend of Login page === DONE
+- Develop frontend of Register page === DONE
 - Develop frontend of User's page
 - Add travel booking functionality??
