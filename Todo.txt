@@ -6,7 +6,8 @@
 - Create Navbar === DONE
 	- Design Navbar === DONE
 - Implement night mode === IN PROGRESS
-	-Add night-mode feature === IN PROGRESS
+	-Add night-mode feature === DONE
+	-Make night-mode state persist on page refresh === IN PROGRESS
 	-include automatic evening time switch-on functionality
 - Create user views, with ability to upload high quality travel Images, user profile, settings, etc.
 - Implement maps with Google Maps API 
