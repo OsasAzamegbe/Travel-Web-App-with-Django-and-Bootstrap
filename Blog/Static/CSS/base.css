@@ -39,11 +39,11 @@
   }
   
   input:checked + .slider {
-    background-color: #00182c;
+    background-color: black;
   }
   
   input:focus + .slider {
-    box-shadow: 0 0 1px #00182c;
+    box-shadow: 0 0 1px #000000;
   }
   
   input:checked + .slider:before {
@@ -60,3 +60,18 @@
   .slider.round:before {
     border-radius: 50%;
   }
+
+body{
+    --accent-color: #df8217;
+    --background-color: white;
+    --transition-delay: 1s;
+
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+body.dark{
+    --accent-color: #00182c;
+    --background-color: #001a29;
+    --text-color: white;
+}
