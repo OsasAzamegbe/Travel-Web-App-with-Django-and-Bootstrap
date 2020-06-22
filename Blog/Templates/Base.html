@@ -11,8 +11,8 @@
     <meta name="viewport" content="device-width, initial-scale=1, shrink-to-fit=no" >
     <title>{% block title %}Travel Blog{% endblock %}</title>
 </head>
-<body class="">
-    <nav class="navbar navbar-expand-lg navbar-light ">
+<body class="dark">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
         <a class="navbar-brand text-monospace ml-4 mr-4"href="{% url 'index' %}">BINI</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -61,7 +61,7 @@
     
     
 
-    <div class="container">
+    <div class="container-fluid">
         {% if messages %}
             {% for message in messages %}
                     {% if message.tags == "error" or message.tags == "debug" %}
@@ -73,5 +73,9 @@
           {% endif %}
         {% block content %}{% endblock %}
     </div>
+    <div class="container-fluid fixed-bottom">
+        <footer class="text-muted text-center"><p>Copyright &copy; Osamudiamen Azamgbe 2020</p></footer>
+    </div>
+    <script src="{% static 'js/base.js' %}"></script>
 </body>
 </html>

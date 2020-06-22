@@ -39,11 +39,11 @@
   }
   
   input:checked + .slider {
-    background-color: black;
+    background-color: #101011;
   }
   
   input:focus + .slider {
-    box-shadow: 0 0 1px #000000;
+    box-shadow: 0 0 1px #101011;
   }
   
   input:checked + .slider:before {
@@ -72,7 +72,7 @@ body{
 }
 
 body.dark{
-    --accent-color: #00182c;
+    --accent-color: #D0D066;
     --background-color: #001a29;
     --text-color: white;
 }
