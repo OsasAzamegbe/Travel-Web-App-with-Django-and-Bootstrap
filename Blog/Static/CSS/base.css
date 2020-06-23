@@ -67,10 +67,13 @@ body{
     --transition-delay: 1s;
     --text-color: black;
 
-    -webkit-transition: var(--transition-delay) ease 0.2s;
-    -moz-transition: var(--transition-delay) ease 0.2s;
-    -o-transition: all var(--transition-delay) ease 0.2s;
-    transition: var(--transition-delay) ease 0.2s;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    -webkit-transition: var(--transition-delay) ease 0.1s;
+    -moz-transition: var(--transition-delay) ease 0.1s;
+    -o-transition: all var(--transition-delay) ease 0.1s;
+    transition: var(--transition-delay) ease 0.1s;
     background-color: var(--background-color);
     color: var(--text-color);   
 }
@@ -80,15 +83,33 @@ body.dark{
     --background-color: #001a29;
     --text-color: white;
 }
+
 .nav-link{
     color: var(--text-color);
 }
 .nav-link:hover{
     color: #777;
 }
+
 .navbar-brand{
     color: var(--text-color);
 }
 .navbar-brand:hover{
     color: #777;
+}
+
+.sun-moon-icon{
+  margin-right: 1em;
+  color: var(--accent-color);
+  transform: scale(1.2)
+}
+
+.sun-moon-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  
+  top: 0;  
+  
 }
