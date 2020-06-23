@@ -67,8 +67,12 @@ body{
     --transition-delay: 1s;
     --text-color: black;
 
+    -webkit-transition: var(--transition-delay) ease 0.2s;
+    -moz-transition: var(--transition-delay) ease 0.2s;
+    -o-transition: all var(--transition-delay) ease 0.2s;
+    transition: var(--transition-delay) ease 0.2s;
     background-color: var(--background-color);
-    color: var(--text-color);
+    color: var(--text-color);   
 }
 
 body.dark{
