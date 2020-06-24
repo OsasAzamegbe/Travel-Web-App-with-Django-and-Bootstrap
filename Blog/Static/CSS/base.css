@@ -67,15 +67,18 @@ body{
     --transition-delay: 1s;
     --text-color: black;
 
-    display: flex;
-    flex-direction: column;
     height: 100vh;
-    -webkit-transition: var(--transition-delay) ease 0.1s;
-    -moz-transition: var(--transition-delay) ease 0.1s;
-    -o-transition: all var(--transition-delay) ease 0.1s;
-    transition: var(--transition-delay) ease 0.1s;
+    overflow: hidden;
+
+    -webkit-transition: var(--transition-delay);
+    -moz-transition: var(--transition-delay);
+    -o-transition: all var(--transition-delay);
+    transition: var(--transition-delay);
+
     background-color: var(--background-color);
-    color: var(--text-color);   
+    color: var(--text-color);
+    
+
 }
 
 body.dark{
@@ -101,14 +104,40 @@ body.dark{
 .sun-moon-icon{
   margin-right: 1em;
   color: var(--accent-color);
-  transform: scale(1.2)
+  transform: scale(1.2);
+  
 }
 
 .sun-moon-container{
+
   display: flex;
   align-items: center;
   justify-content: center;
   height: 200vmin;  
-  top: 0;  
+  top: 0;
+  pointer-events: none;
   
+}
+
+.sun,
+.moon {
+  position: absolute;
+  transition: opacity, color, var(--transition-delay);
+  fill: var(--accent-color);
+}
+
+.sun{
+  top: 5%;
+  opacity: 1;
+}
+.dark .sun{
+  opacity: 0;
+}
+.moon{
+  top: 5%;
+  opacity: 0;
+
+}
+.dark .moon{
+  opacity: 1;
 }
