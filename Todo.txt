@@ -3,13 +3,17 @@
 	- use crispy forms for login and register === DONE
 	- Login-Logout === DONE
 	- Profile route === DONE
-- Create Navbar === IN PROGRESS
-	- Design Navbar === IN PROGRESS
-- Create user views, with ability to upload high quality travel Images
-- Implement maps with Google Maps API
+- Create Navbar === DONE
+	- Design Navbar === DONE
+- Implement night mode === IN PROGRESS
+	-Add night-mode feature === DONE
+	-Make night-mode state persist on page refresh === IN PROGRESS
+	-include automatic evening time switch-on functionality
+- Create user views, with ability to upload high quality travel Images, user profile, settings, etc.
+- Implement maps with Google Maps API 
 - Implement search function for site
 - Develop frontend of Index page
-- Develop frontend of Login page
-- Develop frontend of Register page
+- Develop frontend of Login page === DONE
+- Develop frontend of Register page === DONE
 - Develop frontend of User's page
 - Add travel booking functionality??
