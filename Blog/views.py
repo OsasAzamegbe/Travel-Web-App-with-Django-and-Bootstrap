@@ -35,3 +35,7 @@ def register(request):
 def profile(request):
     return render(request, 'users/profile.html')
 
+
+def map(request):
+    content = {}
+    return render(request, 'map.html', content)
