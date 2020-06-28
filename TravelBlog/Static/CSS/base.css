@@ -67,9 +67,6 @@ body{
     --transition-delay: 1s;
     --text-color: black;
 
-    height: 100vh;
-    overflow: hidden;
-
     -webkit-transition: var(--transition-delay);
     -moz-transition: var(--transition-delay);
     -o-transition: all var(--transition-delay);
@@ -113,7 +110,7 @@ body.dark{
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 200vmin;  
+ 
   top: 0;
   pointer-events: none;
   
