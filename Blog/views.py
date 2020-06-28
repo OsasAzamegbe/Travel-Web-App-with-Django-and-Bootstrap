@@ -11,11 +11,11 @@ from .forms import UserRegisterForm
 
 
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'blog/index.html')
 
 
 def login(request):
-    return render(request, 'login.html')
+    return render(request, 'blog/login.html')
 
 
 def register(request):
@@ -28,14 +28,10 @@ def register(request):
             return redirect('login')
     else:
         form = UserRegisterForm()
-    return render(request, 'register.html', {'form': form})
+    return render(request, 'blog/register.html', {'form': form})
 
 
 @login_required
 def profile(request):
     return render(request, 'users/profile.html')
 
-
-def map(request):
-    content = {}
-    return render(request, 'map.html', content)
