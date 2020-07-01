@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from key import get_key
+from .key import get_key
 import googlemaps
 import pprint
 import time
