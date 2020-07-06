@@ -15,11 +15,10 @@ def get_client():
     return googlemaps.Client(key=API_key)
 
 
-google_client = get_client()
-
 # places search
-
-
 def places(request):
+    google_client = get_client()
+    
+
     content = {}
     return render(request, 'map/map.html', content)
