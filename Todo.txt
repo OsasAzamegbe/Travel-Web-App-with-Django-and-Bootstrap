@@ -5,10 +5,11 @@
 	- Profile route === DONE
 - Create Navbar === DONE
 	- Design Navbar === DONE
-- Implement night mode === IN PROGRESS
+- Implement night mode === PIN
 	-Add night-mode feature === DONE
-	-Make night-mode state persist on page refresh === IN PROGRESS
+	-Make night-mode state persist on page refresh === PIN
 	-include automatic evening time switch-on functionality
+- Change DB from sqlite to mongodb with djongo === IN PROGRESS
 - Create user views, with ability to upload high quality travel Images, user profile, settings, etc.
 - Implement maps with Google Maps API 
 - Implement search function for site
