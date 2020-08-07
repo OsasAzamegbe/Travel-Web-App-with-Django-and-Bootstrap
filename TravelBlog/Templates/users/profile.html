@@ -1,10 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-     
 
-     <div class="container-fluid">
-          <p class="text-monospace h1">{{ user.username }}'s Profile</p>
+     <div class="content-section profile-header">
+          <div class="media profile-media">
+               <img src="{{user.profile.image.url}}" class="rounded-circle img-thumbnail profile-avatar">
+               <div class="media-body">
+                    <h2 class="text-monospace">{{ user.username }}</h2>
+                    <p class="text-secondary">{{ user.profile.bio }}</p>
+               </div>
+          </div>
      </div>
 
 {% endblock %}
