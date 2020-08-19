@@ -44,4 +44,12 @@ class TestUser(unittest.TestCase):
 class TestProfile(unittest.TestCase):
 
     def test_add_profile(self):
-        pass
+        profile_size = len(Profile.objects.all())
+        user = TestUser()
+        user.setUp()
+        self.assertEqual(len(Profile.objects.all()), profile_size + 1)
+        
+        username = user.username
+        userObj = User.objects.get(username=username)
+        userObj.delete()
+        self.assertEqual(len(Profile.objects.all()), profile_size)
