@@ -3,4 +3,4 @@ from django.urls import reverse
 
 
 class PlacesAPISearchTest(TestCase):
-    
+    pass
