@@ -8,6 +8,6 @@
 
 .profile-avatar{
     object-fit: cover;
-    height: 20vh;
-    width: 20vh;
+    height: 20vmin;
+    width: 20vmin;
 }
