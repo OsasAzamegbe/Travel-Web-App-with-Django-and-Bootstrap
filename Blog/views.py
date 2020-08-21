@@ -5,13 +5,18 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import User
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
+from Post.models import Post
 
 
 # Create your views here.
 
 
 def index(request):
-    return render(request, 'blog/index.html')
+    posts = Post.objects.all()
+    context = {
+        'posts': posts
+    }
+    return render(request, 'blog/index.html', context)
 
 
 def login(request):
@@ -49,9 +54,11 @@ def profile(request):
         user_update_form = UserUpdateForm(instance=request.user)
         profile_update_form = ProfileUpdateForm(instance=request.user.profile)
 
+    user_posts = Post.objects.filter(author=request.user)
     context = {
         'user_update_form': user_update_form,
-        'profile_update_form': profile_update_form
+        'profile_update_form': profile_update_form,
+        'user_posts': user_posts
     }
 
     return render(request, 'users/profile.html', context)

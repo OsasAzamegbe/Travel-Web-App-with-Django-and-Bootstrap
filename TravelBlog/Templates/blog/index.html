@@ -2,6 +2,21 @@
 
 {% block content %}
 
-    <h1>Home page</h1>
+    <h1>Home</h1>
+    {% for post in posts %}
+        <div class="card shadow-sm rounded my-2">
+            <div class="card-body">
+                <article class="row my-4 mx-2 flex flex-column">
+                    <h8 class="text-monospace">@{{ post.author.username }}</h8>
+                    <h6>{{ post.title }}</h6>
+                    <p>{{ post.content }}</p>
+                    {% if post.image %}
+                    <img src="{{ post.image.url }}" class="img-fluid post-image">
+                    {% endif %}
+                    <small class="text-muted">{{ post.date }}</small>
+                </article>
+            </div>
+        </div>
+    {% endfor %}
 
 {% endblock %}

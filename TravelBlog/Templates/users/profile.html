@@ -2,7 +2,7 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-     <div class="card shadow rounded">
+     <div class="card shadow-sm rounded my-4">
           <div class="card-body">
                <div class=" profile-content">
                     <img src="{{user.profile.image.url}}" class="img-fluid rounded-circle img-thumbnail profile-avatar">
@@ -11,15 +11,49 @@
                </div>
           </div>
      </div>
-     <form class="my-4" method="POST" enctype="multipart/form-data"> {% csrf_token %}
-          <fieldset class="form-group">
-               <legend class="border-bottom mb-4 pb-2">Profile Info</legend>
-               {{ user_update_form|crispy }}
-               {{ profile_update_form|crispy }}
-          </fieldset>
-          <div class="form-group">
-               <button type="submit" class="btn btn-raised btn-outline-dark waves-effect col-sm-1 px-1 py-1">Update</button>
+
+     <div class="card shadow-sm rounded">
+          <div class="card-body">
+               <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                      <a class="nav-item nav-link active" id="nav-posts-tab" data-toggle="tab" href="#nav-posts" role="tab" aria-controls="nav-posts" aria-selected="true">Posts</a>
+                      <a class="nav-item nav-link" id="nav-favorites-tab" data-toggle="tab" href="#nav-favorites" role="tab" aria-controls="nav-favorite" aria-selected="false">Favorites</a>
+                      <a class="nav-item nav-link" id="nav-settings-tab" data-toggle="tab" href="#nav-settings" role="tab" aria-controls="nav-settings" aria-selected="false">Settings</a>
+                    </div>
+               </nav>
+               <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-posts" role="tabpanel" aria-labelledby="nav-posts-tab">
+                         {% for post in user_posts %}
+                         <div class="card shadow-sm rounded my-2">
+                              <div class="card-body">
+                                   <article class="row my-4 mx-2 flex flex-column">
+                                        <h8 class="text-monospace">@{{ user.username }}</h8>
+                                        <h6>{{ post.title }}</h6>
+                                        <p>{{ post.content }}</p>
+                                        {% if post.image %}
+                                        <img src="{{ post.image.url }}" class="img-fluid post-image">
+                                        {% endif %}
+                                        <small class="text-muted">{{ post.date }}</small>
+                                   </article>
+                              </div>
+                         </div>
+                         {% endfor %}
+                    </div>
+                    <div class="tab-pane fade" id="nav-favorites" role="tabpanel" aria-labelledby="nav-favorites-tab">...</div>
+                    <div class="tab-pane fade" id="nav-settings" role="tabpanel" aria-labelledby="nav-settings-tab">
+                         <form class="my-4" method="POST" enctype="multipart/form-data"> {% csrf_token %}
+                              <fieldset class="form-group">
+                                   <legend class="border-bottom mb-4 pb-2">Profile Info</legend>
+                                   {{ user_update_form|crispy }}
+                                   {{ profile_update_form|crispy }}
+                              </fieldset>
+                              <div class="form-group">
+                                   <button type="submit" class="btn btn-raised btn-outline-dark waves-effect col-sm-1 px-1 py-1">Update</button>
+                              </div>
+                         </form>
+                    </div>
+               </div>
           </div>
-     </form>
+     </div>     
 
 {% endblock %}
