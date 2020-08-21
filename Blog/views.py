@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import User
-from .forms import UserRegisterForm
+from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 
 
 # Create your views here.
@@ -28,10 +28,21 @@ def register(request):
             return redirect('login')
     else:
         form = UserRegisterForm()
-    return render(request, 'blog/register.html', {'form': form})
+
+    context = {
+        'form': form
+    }
+    return render(request, 'blog/register.html', context)
 
 
 @login_required
 def profile(request):
-    return render(request, 'users/profile.html')
+    user_update_form = UserUpdateForm()
+    profile_update_form = ProfileUpdateForm()
+    context = {
+        'user_update_form': user_update_form,
+        'profile_update_form': profile_update_form
+    }
+
+    return render(request, 'users/profile.html', context)
 
