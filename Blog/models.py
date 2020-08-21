@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from PIL import Image
 # from django.db.models.signals import pre_save
 # from TravelBlog.utils import unique_slug_generator
 
@@ -13,6 +14,15 @@ class Profile(models.Model):
         return f'{self.user.username} Profile'
 
 
+    def save(self):
+        super().save()
+
+        img = Image.open(self.image.path)
+        width, height = img.width, img.height
+
+        if height > 250 and width > 250:
+            img.thumbnail((250, 250))        
+            img.save(self.image.path)
 
 
 
