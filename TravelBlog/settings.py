@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'bootstrap4',
     'crispy_forms',
     'map.apps.MapConfig',
+    'Post.apps.PostConfig',
 
 ]
 
