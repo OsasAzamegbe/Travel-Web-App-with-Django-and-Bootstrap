@@ -5,19 +5,21 @@
     <h1>Home</h1>
     {% for post in posts %}
         <div class="card shadow-sm rounded my-2">
-            <div class="card-body">
-                <div class="col mb-2">
-                    <img src="{{ post.author.profile.image.url }}" class="rounded-circle image-thumbnail post-author-image">
-                    <h8 class="text-monospace mx-2">@{{ post.author.username }}</h8>
+            <div class="card-body row">
+                <div class="col-1 mb-2">
+                    <img src="{{ post.author.profile.image.url }}" loading="lazy" class="rounded-circle image-thumbnail post-author-image">
                 </div>
-                <article class="row my-4 mx-2 flex flex-column">
-                    <h6>{{ post.title }}</h6>
-                    <p>{{ post.content }}</p>
-                    {% if post.image %}
-                    <img src="{{ post.image.url }}" class="img-fluid post-image">
-                    {% endif %}
-                    <small class="text-muted">{{ post.date }}</small>
-                </article>
+                <div class="col-11">
+                    <h8 class="text-monospace mx-2" ><a class="text-dark" href="#">@{{ post.author.username }}</a></h8>
+                    <article class="row my-4 mx-2 flex flex-column">
+                        <h6>{{ post.title }}</h6>
+                        <p>{{ post.content }}</p>
+                        {% if post.image %}
+                        <img src="{{ post.image.url }}" loading="lazy" class="img-fluid post-image" alt="{{post.title}}_jpg">
+                        {% endif %}
+                        <small class="text-muted mt-2">{{ post.date }}</small>
+                    </article>
+                </div>
             </div>
         </div>
     {% endfor %}

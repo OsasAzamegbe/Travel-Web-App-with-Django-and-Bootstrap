@@ -9,3 +9,18 @@
     height: 10vmin;
     width: 10vmin;
 }
+
+.link {
+    color: black !important;
+}
+/* 
+.link:visited{
+    color: black;
+}
+.link:hover{
+    color: black;
+}
+
+.link:active{
+    color: black;
+} */
