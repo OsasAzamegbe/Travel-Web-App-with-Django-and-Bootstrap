@@ -12,7 +12,7 @@ from Post.models import Post
 
 
 def index(request):
-    posts = Post.objects.all()
+    posts = Post.objects.all()[::-1]
     context = {
         'posts': posts
     }
@@ -54,7 +54,7 @@ def profile(request):
         user_update_form = UserUpdateForm(instance=request.user)
         profile_update_form = ProfileUpdateForm(instance=request.user.profile)
 
-    user_posts = Post.objects.filter(author=request.user)
+    user_posts = Post.objects.filter(author=request.user)[::-1]
     context = {
         'user_update_form': user_update_form,
         'profile_update_form': profile_update_form,

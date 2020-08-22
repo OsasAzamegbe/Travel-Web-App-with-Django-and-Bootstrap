@@ -5,7 +5,7 @@
      <div class="card shadow-sm rounded my-4">
           <div class="card-body">
                <div class=" profile-content">
-                    <img src="{{user.profile.image.url}}" class="img-fluid rounded-circle img-thumbnail profile-avatar">
+                    <img src="{{user.profile.image.url}}" class="profile-avatar image-thumbnail rounded-circle">
                     <h4 class="text-monospace text-dark">{{ user.username }}</h4>
                     <p class="text-secondary">{{ user.profile.bio }}</p>                        
                </div>
@@ -26,8 +26,11 @@
                          {% for post in user_posts %}
                          <div class="card shadow-sm rounded my-2">
                               <div class="card-body">
+                                   <div class="col mb-2">
+                                        <img src="{{ post.author.profile.image.url }}" class="rounded-circle image-thumbnail post-author-image">
+                                        <h8 class="text-monospace mx-2">@{{ user.username }}</h8>
+                                   </div>
                                    <article class="row my-4 mx-2 flex flex-column">
-                                        <h8 class="text-monospace">@{{ user.username }}</h8>
                                         <h6>{{ post.title }}</h6>
                                         <p>{{ post.content }}</p>
                                         {% if post.image %}

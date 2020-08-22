@@ -11,3 +11,10 @@
     height: 20vmin;
     width: 20vmin;
 }
+
+.image-thumbnail{    
+    padding: .25rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    max-width: 100%;
+}

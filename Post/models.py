@@ -14,3 +14,5 @@ class Post(models.Model):
     
     class Meta:
         ordering = ['date']
+
+        

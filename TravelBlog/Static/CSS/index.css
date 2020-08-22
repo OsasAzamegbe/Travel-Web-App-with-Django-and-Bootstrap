@@ -3,3 +3,9 @@
     width: 400px;
     object-fit: scale-down;
 }
+
+.post-author-image{
+    object-fit: cover;
+    height: 10vmin;
+    width: 10vmin;
+}
