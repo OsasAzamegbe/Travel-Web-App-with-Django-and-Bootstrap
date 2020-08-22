@@ -25,5 +25,5 @@ class Post(models.Model):
         img.save(self.image.path)
     
     class Meta:
-        ordering = ['date']
+        ordering = ['-date']
 
