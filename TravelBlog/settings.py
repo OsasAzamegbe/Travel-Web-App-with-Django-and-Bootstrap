@@ -136,6 +136,10 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'TravelBlog/Templates/'),
+)
+
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'index'
