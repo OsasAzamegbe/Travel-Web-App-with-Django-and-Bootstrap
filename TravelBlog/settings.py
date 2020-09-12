@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 import django_heroku
-from .keys import SETTINGS_SECRET_KEY
+from .keys import SETTINGS_SECRET_KEY, DB_PASSWORD, DB_USERNAME
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -82,10 +82,14 @@ WSGI_APPLICATION = 'TravelBlog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'test',
-        'HOST': 'mongodb://localhost:27017/',
-        'USER': '',
-        'PASSWORD': '',
+        'CLIENT': {
+            'name': 'BiniTravelDB',
+            'host': f'mongodb+srv://{DB_USERNAME}:{DB_PASSWORD}@binitraveldb.qbftc.mongodb.net/BiniTravelDB?retryWrites=true&w=majority', 
+            'username': DB_USERNAME,
+            'password': DB_PASSWORD,
+            "authMechanism": "SCRAM-SHA-1",
+        }
+        
     }
 }
 
