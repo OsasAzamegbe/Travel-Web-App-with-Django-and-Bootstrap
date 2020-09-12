@@ -1,0 +1,11 @@
+
+[gssapi]
+winkerberos>=0.5.0
+
+[snappy]
+python-snappy
+
+[srv]
+dnspython<2.0.0,>=1.13.0
+
+[tls]
