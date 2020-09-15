@@ -60,7 +60,7 @@
   .slider.round:before {
     border-radius: 50%;
   }
-
+/* 
 body{
     --accent-color: #df8217;
     --background-color: white;
@@ -76,13 +76,13 @@ body{
     color: var(--text-color);
     
 
-}
+} */
 
-body.dark{
+/* body.dark{
     --accent-color: #D0D066;
     --background-color: #161b20;
     --text-color: white;
-}
+} */
 
 .nav-link{
     color: var(--text-color);
@@ -98,7 +98,7 @@ body.dark{
     color: #777;
 }
 
-.sun-moon-icon{
+/* .sun-moon-icon{
   margin-right: 1em;
   color: var(--accent-color);
   transform: scale(1.2);
@@ -137,4 +137,4 @@ body.dark{
 }
 .dark .moon{
   opacity: 1;
-}
+} */
