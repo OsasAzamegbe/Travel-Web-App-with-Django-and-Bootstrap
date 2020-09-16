@@ -23,6 +23,7 @@ def index(request):
 class PostListView(ListView):
     model = Post
     template_name = 'blog/index.html'
+    context_object_name = 'posts'
 
     
 
