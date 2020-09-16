@@ -3,7 +3,7 @@ from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from .models import User
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 from Post.models import Post
@@ -25,7 +25,11 @@ class PostListView(ListView):
     template_name = 'blog/index.html'
     context_object_name = 'posts'
 
-    
+
+class PostDetailView(DetailView):
+    model = Post
+
+
 
 def login(request):
     return render(request, 'blog/login.html')
