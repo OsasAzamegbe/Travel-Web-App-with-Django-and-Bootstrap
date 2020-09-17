@@ -6,9 +6,9 @@
     {% bootstrap_css %}
     {% bootstrap_javascript %}
     {% load static %}
-    <link rel="stylesheet" href="{% static 'CSS/base.css' %}" />
-    <link rel="stylesheet" href="{% static 'CSS/profile.css' %}"/>
-    <link rel="stylesheet" href="{% static 'CSS/index.css' %}"/>
+    <link rel="stylesheet" href="{% static 'CSS/base.css' %}?{% now 'U' %}" />
+    <link rel="stylesheet" href="{% static 'CSS/profile.css' %}?{% now 'U' %}"/>
+    <link rel="stylesheet" href="{% static 'CSS/index.css' %}?{% now 'U' %}"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="device-width, initial-scale=1, maximum-scale=3, shrink-to-fit=no" user-scalable="no">
     <title>{% block title %}BINI{% endblock %}</title>

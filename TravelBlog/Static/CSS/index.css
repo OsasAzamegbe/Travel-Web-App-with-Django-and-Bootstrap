@@ -6,7 +6,7 @@
 
 .post-author-image{
     object-fit: cover;
-    /* height: 10vmin; */
+    height: 10vmin;
     width: 10vmin;
 }
 
