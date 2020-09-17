@@ -1,0 +1,20 @@
+- Add Login-Logout functionality (sessions) === DONE
+	- create login form on the login template === DONE
+	- use crispy forms for login and register === DONE
+	- Login-Logout === DONE
+	- Profile route === DONE
+- Create Navbar === DONE
+	- Design Navbar === DONE
+- Implement night mode === PIN
+	-Add night-mode feature === DONE
+	-Make night-mode state persist on page refresh === PIN
+	-include automatic evening time switch-on functionality
+- Change DB from sqlite to mongodb with djongo === DONE
+- Create user views, with ability to upload high quality travel Images, user profile, settings, etc. === IN PROGRESS
+- Implement maps with Google Maps API 
+- Implement search function for site
+- Develop frontend of Index page === DONE
+- Develop frontend of Login page === DONE
+- Develop frontend of Register page === DONE
+- Develop frontend of User's page === DONE
+- Add travel booking functionality??

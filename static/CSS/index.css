@@ -1,0 +1,26 @@
+.post-image{
+    height: 200px;
+    width: 400px;
+    object-fit: scale-down;
+}
+
+.post-author-image{
+    object-fit: cover;
+    height: 10vmin;
+    width: 10vmin;
+}
+
+.link {
+    color: black !important;
+}
+/* 
+.link:visited{
+    color: black;
+}
+.link:hover{
+    color: black;
+}
+
+.link:active{
+    color: black;
+} */

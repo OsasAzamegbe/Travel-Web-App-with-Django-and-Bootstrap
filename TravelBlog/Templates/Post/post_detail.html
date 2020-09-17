@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card shadow-sm rounded my-2">
+    <div class="card-body row">
+        <div class="col-1 mb-2">
+            <img src="{{ post.author.profile.image.url }}" loading="lazy" class="rounded-circle image-thumbnail">
+        </div>
+        <div class="col-11">
+            <h8 class="text-monospace mx-2" ><a class="text-dark" href="#">@{{ post.author.username }}</a></h8>
+            <article class="row my-4 mx-2 flex flex-column">
+                <h6>{{ post.title }}</h6>
+                <p>{{ post.content }}</p>
+                {% if post.image %}
+                <img src="{{ post.image.url }}" loading="lazy" class="img-fluid post-image" alt="{{post.title}}_jpg">
+                {% endif %}
+                <small class="text-muted mt-2">{{ post.date }}</small>
+            </article>
+        </div>
+    </div>
+</div>
+{% endblock %}

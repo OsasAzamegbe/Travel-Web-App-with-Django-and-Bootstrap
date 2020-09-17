@@ -1,0 +1,140 @@
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #df8217;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #101011;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #101011;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+body{
+    --accent-color: #df8217;
+    --background-color: white;
+    --transition-delay: 1s;
+    --text-color: black;
+
+    -webkit-transition: var(--transition-delay);
+    -moz-transition: var(--transition-delay);
+    -o-transition: all var(--transition-delay);
+    transition: var(--transition-delay);
+
+    background-color: var(--background-color);
+    color: var(--text-color);
+    
+
+}
+
+body.dark{
+    --accent-color: #D0D066;
+    --background-color: #161b20;
+    --text-color: white;
+}
+
+.nav-link{
+    color: var(--text-color);
+}
+.nav-link:hover{
+    color: #777;
+}
+
+.navbar-brand{
+    color: var(--text-color);
+}
+.navbar-brand:hover{
+    color: #777;
+}
+
+.sun-moon-icon{
+  margin-right: 1em;
+  color: var(--accent-color);
+  transform: scale(1.2);
+  
+}
+
+.sun-moon-container{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+  top: 0;
+  pointer-events: none;
+  
+}
+
+.sun,
+.moon {
+  position: absolute;
+  transition: opacity, color, var(--transition-delay);
+  fill: var(--accent-color);
+}
+
+.sun{
+  top: 5%;
+  opacity: 1;
+}
+.dark .sun{
+  opacity: 0;
+}
+.moon{
+  top: 5%;
+  opacity: 0;
+
+}
+.dark .moon{
+  opacity: 1;
+}
