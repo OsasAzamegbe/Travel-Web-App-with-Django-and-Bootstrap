@@ -3,7 +3,8 @@ from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.views.generic import ListView, DetailView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import ListView, DetailView, CreateView
 from .models import User
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 from Post.models import Post
@@ -30,6 +31,14 @@ class PostDetailView(DetailView):
     model = Post
     context_object_name = 'post'
 
+
+class PostCreateView(LoginRequiredMixin, CreateView):
+    model = Post
+    fields = ['title', 'content', 'image']
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
 
 
 def login(request):
