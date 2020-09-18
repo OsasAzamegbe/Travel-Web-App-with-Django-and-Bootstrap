@@ -84,6 +84,15 @@ body{
     --text-color: white;
 } */
 
+.icon-shadow{
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.425)!important;
+}
+
+.create-icon{
+  border-radius: 50%;
+  fill: rgb(34, 34, 34)
+}
+
 .nav-link{
     color: var(--text-color);
 }
