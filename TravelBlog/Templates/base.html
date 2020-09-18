@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="{% static 'CSS/base.css' %}?{% now 'U' %}" />
     <link rel="stylesheet" href="{% static 'CSS/profile.css' %}?{% now 'U' %}"/>
     <link rel="stylesheet" href="{% static 'CSS/index.css' %}?{% now 'U' %}"/>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="device-width, initial-scale=1, maximum-scale=3, shrink-to-fit=no" user-scalable="no">
     <title>{% block title %}BINI{% endblock %}</title>
@@ -75,7 +73,7 @@
         </div>
 
         {% if user.is_authenticated %}
-            <div class="my-4 mx-4 fixed-bottom ">
+            <div class="my-4 mx-4 fixed-bottom " style="width: fit-content;">
                 <a  href="{% url 'post-create' %}">
                     <svg class="create-icon icon-shadow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="4rem" height="4rem"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
                 </a>
