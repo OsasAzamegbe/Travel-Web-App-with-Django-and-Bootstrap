@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="row align-items-center justify-content-center h-100">
+        <div class="col text-center">
+            <form method="POST">{% csrf_token %}
+                <!-- <fieldset class="form-group">
+                    <legend class="border-bottom mb-4 pb-2 h2">Sign In</legend>
+                </fieldset> -->
+                <p class="text-monospace h5"><strong>Are you sure you want to delete "{{ object.title }}"?</strong></p>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-raised waves-effect btn-danger" type="submit">Yes, delete</button>
+                    <a class="btn btn-lg btn-raised waves-effect btn-outline-secondary" href="{% url 'post-detail' object.id %}">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+     
+
+{% endblock %}
