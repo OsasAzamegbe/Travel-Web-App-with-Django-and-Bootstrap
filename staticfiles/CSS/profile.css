@@ -1,0 +1,24 @@
+.profile-content{    
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    /* background: blue; */
+}
+
+.profile-avatar{
+    object-fit: cover;
+    height: 20vmin;
+    width: 20vmin;
+}
+
+.image-thumbnail{    
+    padding: .25rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    /* max-width: 100%; */
+}
+
+.link-color {
+    color: black !important;
+}
