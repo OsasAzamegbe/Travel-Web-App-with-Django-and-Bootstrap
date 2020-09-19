@@ -4,7 +4,7 @@
 <div class="card shadow-sm rounded my-2">
     <div class="card-body row">
         <div class="col-1 mb-2">
-            <img src="{{ post.author.profile.image.url }}" loading="lazy" class="rounded-circle image-thumbnail post-author-image">
+            <img src="{{ post.author.profile.image.url }}" loading="lazy" class="rounded-circle image-thumbnail post-author-image" alt="{{post.author.username}} profile jpg">
         </div>
         <div class="col-11">
             <div class="row px-4">
@@ -27,7 +27,7 @@
                 <h6>{{ post.title }}</h6>
                 <p>{{ post.content }}</p>
                 {% if post.image %}
-                <img src="{{ post.image.url }}" loading="lazy" class="img-fluid post-image" alt="{{post.title}}_jpg">
+                <img src="{{ post.image.url }}" loading="lazy" class="img-fluid post-image" alt="{{post.title}} jpg">
                 {% endif %}
                 <small class="text-muted mt-2">{{ post.date }}</small>
             </article>
