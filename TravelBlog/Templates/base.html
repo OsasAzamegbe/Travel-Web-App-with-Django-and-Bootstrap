@@ -10,17 +10,17 @@
     <link rel="stylesheet" href="{% static 'CSS/profile.css' %}?{% now 'U' %}"/>
     <link rel="stylesheet" href="{% static 'CSS/index.css' %}?{% now 'U' %}"/>
     <meta charset="UTF-8">
-    <meta name="viewport" content="device-width, initial-scale=1, maximum-scale=6, shrink-to-fit=no">
+    <meta name="viewport" content="device-width, user-scalable='no', initial-scale=1, maximum-scale=2, shrink-to-fit=no">
     <title>{% block title %}BINI{% endblock %}</title>
 </head>
 <body>
     <div class="container">
-        <nav class="navbar navbar-light navbar-expand-lg">
+        <nav class="navbar navbar-color navbar-expand-lg">
 
             <a class="navbar-brand text-monospace "href="{% url 'index' %}"><strong>BINI</strong></a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"   aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25px" height="25px"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></span>
             </button>
             
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -75,7 +75,7 @@
         {% if user.is_authenticated %}
             <div class="my-4 mx-4 fixed-bottom " style="width: fit-content;">
                 <a  href="{% url 'post-create' %}">
-                    <svg class="create-icon icon-shadow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="4rem" height="4rem"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+                    <svg class="create-icon icon icon-shadow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="4rem" height="4rem"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
                 </a>
             </div>
         {% endif %}

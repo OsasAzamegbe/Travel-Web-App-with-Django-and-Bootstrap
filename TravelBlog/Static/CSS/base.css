@@ -90,6 +90,10 @@ body{
 
 .create-icon{
   border-radius: 50%;
+  
+}
+
+.icon{
   fill: rgb(34, 34, 34)
 }
 
@@ -106,6 +110,12 @@ body{
 .navbar-brand:hover{
     color: #777;
 }
+
+.navbar-color .navbar-toggler {
+  color: rgba(0, 0, 0, 0.904);
+  border-color: rgba(0, 0, 0, 0.5);
+}
+
 
 /* .sun-moon-icon{
   margin-right: 1em;
