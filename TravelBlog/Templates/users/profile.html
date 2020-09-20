@@ -5,9 +5,9 @@
      <div class="card shadow-sm rounded my-4">
           <div class="card-body">
                <div class=" profile-content">
-                    <img src="{{user.profile.image.url}}" loading="lazy" class="profile-avatar image-thumbnail rounded-circle" alt="{{user.username}} profile jpg">
-                    <h4 class="text-monospace text-dark">{{ user.username }}</h4>
-                    <p class="text-secondary">{{ user.profile.bio }}</p>                        
+                    <img src="{{page_user.profile.image.url}}" loading="lazy" class="profile-avatar image-thumbnail rounded-circle" alt="{{page_user.username}} profile jpg">
+                    <h4 class="text-monospace text-dark">{{ page_user.username }}</h4>
+                    <p class="text-secondary">{{ page_user.profile.bio }}</p>                        
                </div>
           </div>
      </div>
@@ -18,7 +18,9 @@
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
                       <a class="nav-item nav-link active" id="nav-posts-tab" data-toggle="tab" href="#nav-posts" role="tab" aria-controls="nav-posts" aria-selected="true">Posts</a>
                       <a class="nav-item nav-link" id="nav-favorites-tab" data-toggle="tab" href="#nav-favorites" role="tab" aria-controls="nav-favorite" aria-selected="false">Favorites</a>
-                      <a class="nav-item nav-link" id="nav-settings-tab" data-toggle="tab" href="#nav-settings" role="tab" aria-controls="nav-settings" aria-selected="false">Settings</a>
+                      {% if user == page_user %}
+                         <a class="nav-item nav-link" id="nav-settings-tab" data-toggle="tab" href="#nav-settings" role="tab" aria-controls="nav-settings" aria-selected="false">Settings</a>
+                      {% endif %}
                     </div>
                </nav>
                <div class="tab-content" id="nav-tabContent">

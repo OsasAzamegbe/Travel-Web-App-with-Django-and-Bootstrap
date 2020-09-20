@@ -1,10 +1,12 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse, reverse_lazy
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, Http404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.core.paginator import Paginator
+from django.contrib.auth.models import User
 from .models import User
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 from Post.models import Post
@@ -84,7 +86,7 @@ def register(request):
 
 
 @login_required
-def profile(request):
+def profile(request, *args, **kwargs):
     if request.method == 'POST':
         user_update_form = UserUpdateForm(request.POST, instance=request.user)
         profile_update_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
@@ -92,17 +94,32 @@ def profile(request):
             user_update_form.save()
             profile_update_form.save()
             messages.success(request, 'Your profile info has been updated successfully!')
-            return redirect(reverse('profile'))
+            return redirect(reverse('profile') + f'?page=1&username={ request.user.username }')
     else:
-        user_update_form = UserUpdateForm(instance=request.user)
-        profile_update_form = ProfileUpdateForm(instance=request.user.profile)
+        user = get_object_or_404(User, username=request.GET.get('username'))
+        page_num = request.GET.get('page')
+        user_update_form = UserUpdateForm(instance=user)
+        profile_update_form = ProfileUpdateForm(instance=user.profile)
 
-    user_posts = Post.objects.filter(author=request.user)
+    paginate_by = 3
+    posts = Post.objects.filter(author=user)
+    paginator = Paginator(posts, paginate_by)
+    user_posts = None
+
+    try:
+        page_obj = paginator.page(int(page_num))
+        user_posts = page_obj.object_list
+
+    except:
+        raise Http404("Page does not exist.")
+
     context = {
+        'page_user': user,
         'user_update_form': user_update_form,
         'profile_update_form': profile_update_form,
-        'user_posts': user_posts
+        'user_posts': user_posts,
+        'page_obj': page_obj,
+        'is_paginated': True,
     }
 
     return render(request, 'users/profile.html', context)
-
