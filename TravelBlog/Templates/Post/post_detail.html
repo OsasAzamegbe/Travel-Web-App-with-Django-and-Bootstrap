@@ -8,7 +8,7 @@
         </div>
         <div class="col-11">
             <div class="row px-4">
-                <h8 class="text-monospace mx-2" ><a class="text-dark" href="#">@{{ post.author.username }}</a></h8>
+                <h8 class="text-monospace mx-2" ><a class="text-dark" href="{% url 'profile' %}?username={{ post.author.username }}&page=1">@{{ post.author.username }}</a></h8>
                 {% if post.author == user %}
                     <div class="dropdown ml-auto">
                         <a id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">
