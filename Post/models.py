@@ -17,17 +17,17 @@ class Post(models.Model):
     def get_absolute_url(self):
         return reverse('post-detail', kwargs={'pk': self.pk})
 
-    def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)
+    # def save(self, *args, **kwargs):
+    #     super().save(*args, **kwargs)
 
-        if self.image:
-            img = Image.open(self.image.path)
-            width, height = img.size
+    #     if self.image:
+    #         img = Image.open(self.image.path)
+    #         width, height = img.size
             
-            if width > 1000 and height > 1000:
-                img.resize((1000, 1000), Image.LANCZOS)
+    #         if width > 1000 and height > 1000:
+    #             img.resize((1000, 1000), Image.LANCZOS)
 
-            img.save(self.image.path)
+    #         img.save(self.image.path)
         
     class Meta:
         ordering = ['-date']
