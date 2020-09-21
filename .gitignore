@@ -28,6 +28,7 @@ db.sqlite3
 *$py.class 
 
 # Distribution / packaging 
+media/
 .Python build/ 
 develop-eggs/ 
 dist/ 
