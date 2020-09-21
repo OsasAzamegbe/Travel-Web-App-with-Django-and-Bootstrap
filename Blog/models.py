@@ -14,15 +14,15 @@ class Profile(models.Model):
         return f'{self.user.username} Profile'
 
 
-    def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)
+    # def save(self, *args, **kwargs):
+    #     super().save(*args, **kwargs)
 
-        img = Image.open(self.image.path)
-        width, height = img.width, img.height
+    #     img = Image.open(self.image.path)
+    #     width, height = img.width, img.height
 
-        if height > 250 and width > 250:
-            img.thumbnail((250, 250))        
-            img.save(self.image.path)
+    #     if height > 250 and width > 250:
+    #         img.thumbnail((250, 250))        
+    #         img.save(self.image.path)
 
 
 
