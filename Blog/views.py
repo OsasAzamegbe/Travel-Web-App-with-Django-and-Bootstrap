@@ -12,9 +12,6 @@ from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 from Post.models import Post
 
 
-# Create your views here.
-
-
 def index(request):
     posts = Post.objects.all()
     context = {
@@ -27,7 +24,7 @@ class PostListView(ListView):
     model = Post
     template_name = 'blog/index.html'
     context_object_name = 'posts'
-    paginate_by = 3
+    paginate_by = 5
 
 
 class PostDetailView(DetailView):
@@ -101,7 +98,7 @@ def profile(request, *args, **kwargs):
         user_update_form = UserUpdateForm(instance=user)
         profile_update_form = ProfileUpdateForm(instance=user.profile)
 
-    paginate_by = 3
+    paginate_by = 5
     posts = Post.objects.filter(author=user)
     paginator = Paginator(posts, paginate_by)
     user_posts = None
