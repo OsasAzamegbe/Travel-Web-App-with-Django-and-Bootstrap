@@ -26,8 +26,15 @@ def favAddView(request, pk):
     if request.method == 'GET':
         post = get_object_or_404(Post, id=pk)
         user = request.user
-        post.number_of_favorites += 1
+
+        if post.number_of_favorites:
+            post.number_of_favorites += 1
+        else:
+            post.number_of_favorites = 1
+            
         user.favorites.add(post)
+        post.save()
+        user.save()
         context = {
             'number_of_favorites': post.number_of_favorites,
         }
