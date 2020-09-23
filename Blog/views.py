@@ -97,8 +97,11 @@ def profile(request, *args, **kwargs):
         page_num = request.GET.get('page')
         user_update_form = UserUpdateForm(instance=user)
         profile_update_form = ProfileUpdateForm(instance=user.profile)
-        favs = Favorite.objects.get(user=user)
-        fav_posts = favs.posts.all()
+        try:
+            favs = Favorite.objects.get(user=user)
+            fav_posts = favs.posts.all()
+        except Favorite.DoesNotExist:
+            fav_posts = ()            
 
     paginate_by = 5
     posts = Post.objects.filter(author=user)
