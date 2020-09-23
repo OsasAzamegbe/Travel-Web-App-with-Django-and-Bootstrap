@@ -10,7 +10,7 @@ from django.contrib.auth.models import User
 from .models import User
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 from Post.models import Post
-
+from Favorite.models import Favorite
 
 def index(request):
     posts = Post.objects.all()
@@ -97,6 +97,8 @@ def profile(request, *args, **kwargs):
         page_num = request.GET.get('page')
         user_update_form = UserUpdateForm(instance=user)
         profile_update_form = ProfileUpdateForm(instance=user.profile)
+        favs = Favorite.objects.get(user=user)
+        fav_posts = favs.posts.all()
 
     paginate_by = 5
     posts = Post.objects.filter(author=user)
@@ -117,6 +119,7 @@ def profile(request, *args, **kwargs):
         'user_posts': user_posts,
         'page_obj': page_obj,
         'is_paginated': True,
+        'fav_posts': fav_posts,
     }
 
     return render(request, 'users/profile.html', context)

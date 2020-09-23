@@ -18,5 +18,6 @@ from django.urls import path
 from Favorite import views as fav_views
 
 urlpatterns = [    
-    path('list/<str:username>/', fav_views.favListView, name='fav-list'),
+    # path('list/<str:username>/', fav_views.favListView, name='fav-list'),
+    path('post/<int:pk>/', fav_views.favAddView, name='fav-add'),
 ]

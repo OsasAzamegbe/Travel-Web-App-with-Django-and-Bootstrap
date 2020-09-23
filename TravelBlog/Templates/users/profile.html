@@ -46,7 +46,28 @@
                          </div>
                          {% endfor %}
                     </div>
-                    <div class="tab-pane fade" id="nav-favorites" role="tabpanel" aria-labelledby="nav-favorites-tab">...</div>
+                    <div class="tab-pane fade" id="nav-favorites" role="tabpanel" aria-labelledby="nav-favorites-tab">
+                         {% for post in fav_posts %}
+                         <div class="card shadow-sm rounded my-2">
+                              <div class="card-body row">
+                                   <div class="col-1 mb-2">
+                                        <img src="{{ post.author.profile.image.url }}" loading="lazy" class="rounded-circle image-thumbnail post-author-image" alt="{{post.author.username}} profile jpg">
+                                   </div>
+                                   <div class="col-11">
+                                        <h8 class="text-monospace mx-2" ><a class="text-dark" href="{% url 'profile' %}?username={{ post.author.username }}&page=1">@{{ post.author.username }}</a></h8>
+                                        <article class="row my-4 mx-2 flex flex-column">
+                                             <h6><a class="text-dark" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h6>
+                                            <p>{{ post.content }}</p>
+                                            {% if post.image %}
+                                            <img src="{{ post.image.url }}" loading="lazy" class="img-fluid post-image" alt="{{post.title}} jpg">
+                                            {% endif %}
+                                            <small class="text-muted mt-2">{{ post.date }}</small>
+                                        </article>
+                                   </div>
+                              </div>
+                         </div>
+                         {% endfor %}
+                    </div>
                     <div class="tab-pane fade" id="nav-settings" role="tabpanel" aria-labelledby="nav-settings-tab">
                          <form class="my-4" method="POST" enctype="multipart/form-data"> {% csrf_token %}
                               <fieldset class="form-group">
