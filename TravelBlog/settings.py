@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'map.apps.MapConfig',
     'Post.apps.PostConfig',
+    'Favorite.apps.FavoriteConfig',
     'environ',
     'storages',
 

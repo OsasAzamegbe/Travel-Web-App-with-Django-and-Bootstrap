@@ -32,6 +32,7 @@ urlpatterns = [
     path('register/', blog_views.register, name='register'),
     path('map/', include('map.urls')),
     path('accounts/', include('Blog.urls')),
+    path('favorite/', include('Favorite.urls'))
 ]
 
 if settings.DEBUG:
