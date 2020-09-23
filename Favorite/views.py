@@ -28,8 +28,8 @@ def favAddView(request, pk):
         user = request.user
 
         post.number_of_favorites += 1
-        user.favorites.posts.add(post)
-        
+        user.favorite.posts.add(post)
+
         post.save()
         user.save()
         context = {
@@ -47,10 +47,10 @@ def favDeleteView(request, pk):
         user = request.user
 
         try:
-            favs = user.favorites.posts
+            favs = user.favorite.posts.all()
             assert post in favs
             post.number_of_favorites -= 1                
-            user.favorites.posts.remove(post)
+            user.favorite.posts.remove(post)
 
             post.save()
             user.save()
