@@ -7,7 +7,21 @@
             <img src="{{ post.author.profile.image.url }}" loading="lazy" class="rounded-circle image-thumbnail post-author-image" alt="{{post.author.username}} profile jpg">
         </div>
         <div class="col-11">
-            <h8 class="font-monospace mx-2" ><a class="text-dark" href="{% url 'profile' %}?username={{ post.author.username }}&page=1">@{{ post.author.username }}</a></h8>
+            <div>
+                <h8 class="font-monospace mx-2" ><a class="text-dark" href="{% url 'profile' %}?username={{ post.author.username }}&page=1">@{{ post.author.username }}</a></h8>
+                {% if post.author == user %}
+                    <div class="dropdown ml-auto">
+                        <a id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="24px" height="24px"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                        </a>
+                    
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="{% url 'post-edit' post.id %}">Edit</a>
+                        <a class="dropdown-item text-danger" href="{% url 'post-delete' post.id %}">Delete</a>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
             <article class="row my-4 mx-2 flex flex-column">
                 <h6><a class="text-dark" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h6>
                 <p>{{ post.content }}</p>
