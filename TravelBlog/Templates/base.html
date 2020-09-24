@@ -28,7 +28,7 @@
                 <div class="navbar-nav">
                     <a class="nav-item nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
                     <a class="nav-item nav-link" href="#">Map</a>
-                    <a class="nav-item nav-link" href="#">Trending Places</a>
+                    <a class="nav-item nav-link" href="{% url 'trending-posts' %}">Trending Posts</a>
                 </div>
               
                 {% if user.is_authenticated %}

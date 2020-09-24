@@ -22,46 +22,36 @@ from Post.models import Post
 #     return HttpResponseNotAllowed(['GET'])
 
 @login_required
-def favAddView(request, pk):
+def favToggleView(request, pk):
     if request.method == 'GET':
         post = get_object_or_404(Post, id=pk)
+        original_favorites = post.number_of_favorites
         user = request.user
-
-        post.number_of_favorites += 1
-        user.favorite.posts.add(post)
-
-        post.save()
-        user.save()
-        context = {
-            'number_of_favorites': post.number_of_favorites,
-        }
-        return JsonResponse(context)
-
-    return HttpResponseNotAllowed(['GET'])
-
-
-@login_required
-def favDeleteView(request, pk):
-    if request.method == 'GET':
-        post = get_object_or_404(Post, id=pk)
-        user = request.user
-
         try:
             favs = user.favorite.posts.all()
-            assert post in favs
-            post.number_of_favorites -= 1                
-            user.favorite.posts.remove(post)
+            if post in favs:
+                post.number_of_favorites -= 1                
+                user.favorite.posts.remove(post)
+            else:
+                post.number_of_favorites += 1
+                user.favorite.posts.add(post)
 
             post.save()
             user.save()
 
+            context = {
+                'number_of_favorites': post.number_of_favorites,
+            }
+
+            status = 200
+
         except:
-            raise Http404('User has not favorited this post yet')
-        
-        context = {
-            'number_of_favorites': post.number_of_favorites,
-        }
-        return JsonResponse(context)
+            post.number_of_favorites = original_favorites
+            post.save()
+            
+            context = {}
+            status = 500
 
-    return HttpResponseNotAllowed(['GET'])
+        return JsonResponse(context, status=status)
 
+    return JsonResponse({"data: method unallowed"}, status=405)

@@ -15,9 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Favorite import views as fav_views
+from Post import views as post_views
 
 urlpatterns = [    
-    # path('list/<str:username>/', fav_views.favListView, name='fav-list'),
-    path('post/<int:pk>/', fav_views.favToggleView, name='fav-toggle'),
+    path('trending/', post_views.TrendingListView.as_view(), name='trending-posts'),
 ]
