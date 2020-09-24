@@ -6,7 +6,7 @@
           <div class="card-body">
                <div class=" profile-content">
                     <img src="{{page_user.profile.image.url}}" loading="lazy" class="profile-avatar image-thumbnail rounded-circle" alt="{{page_user.username}} profile jpg">
-                    <h4 class="text-monospace text-dark">{{ page_user.username }}</h4>
+                    <h4 class="font-monospace text-dark">{{ page_user.username }}</h4>
                     <p class="text-secondary">{{ page_user.profile.bio }}</p>                        
                </div>
           </div>
@@ -32,7 +32,7 @@
                                       <img src="{{ post.author.profile.image.url }}" loading="lazy" class="rounded-circle image-thumbnail post-author-image" alt="{{post.author.username}} profile jpg">
                                   </div>
                                   <div class="col-11">
-                                      <h8 class="text-monospace mx-2" ><a class="text-dark" href="{% url 'profile' %}?username={{ post.author.username }}&page=1">@{{ post.author.username }}</a></h8>
+                                      <h8 class="font-monospace mx-2" ><a class="text-dark" href="{% url 'profile' %}?username={{ post.author.username }}&page=1">@{{ post.author.username }}</a></h8>
                                       <article class="row my-4 mx-2 flex flex-column">
                                           <h6><a class="text-dark" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h6>
                                           <p>{{ post.content }}</p>
@@ -68,7 +68,7 @@
                                       <img src="{{ post.author.profile.image.url }}" loading="lazy" class="rounded-circle image-thumbnail post-author-image" alt="{{post.author.username}} profile jpg">
                                   </div>
                                   <div class="col-11">
-                                      <h8 class="text-monospace mx-2" ><a class="text-dark" href="{% url 'profile' %}?username={{ post.author.username }}&page=1">@{{ post.author.username }}</a></h8>
+                                      <h8 class="font-monospace mx-2" ><a class="text-dark" href="{% url 'profile' %}?username={{ post.author.username }}&page=1">@{{ post.author.username }}</a></h8>
                                       <article class="row my-4 mx-2 flex flex-column">
                                           <h6><a class="text-dark" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h6>
                                           <p>{{ post.content }}</p>
@@ -104,7 +104,7 @@
                                    {{ profile_update_form|crispy }}
                               </fieldset>
                               <div class="form-group">
-                                   <button type="submit" class="btn btn-raised btn-outline-dark waves-effect col-sm-1 px-1 py-1">Update</button>
+                                   <button type="submit" class="btn btn-raised btn-outline-dark waves-effect col-sm-1 my-1 px-1 py-1">Update</button>
                               </div>
                          </form>
                     </div>
