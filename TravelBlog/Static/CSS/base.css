@@ -120,6 +120,9 @@ body{
   text-decoration: none;
 }
 
+.form-control:focus {
+  border-color: #353d50 !important;
+  box-shadow: 0 0 0 0.2rem rgba(26, 26, 26, 0.25) !important;
 
 /* .sun-moon-icon{
   margin-right: 1em;
