@@ -110,6 +110,33 @@
                     </div>
                </div>
           </div>
-     </div>     
+     </div>    
+     
+    <!-- page navigation buttons -->
+    {% if is_paginated %}
+        <div class="d-flex justify-content-center">
+            {% if page_obj.has_previous %}
+                <a class="btn btn-raised btn-sm waves-effect btn-outline-dark my-4 mx-1" href="?page=1&username={{ page_user.username }}">First</a>
+                <a class="btn btn-raised btn-sm  waves-effect btn-outline-dark my-4 mx-1" href="?page={{ page_obj.previous_page_number }}&username={{ page_user.username }}">Prev</a>
+            {% endif %}
+
+            {% for num in page_obj.paginator.page_range %}
+
+                {% if num == page_obj.number %}
+                    <a class="btn btn-raised btn-sm waves-effect btn-dark my-4 mx-1" href="?page={{ num }}&username={{ page_user.username }}">{{ num }}</a>
+                {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                    <a class="btn btn-raised btn-sm waves-effect btn-outline-dark my-4 mx-1" href="?page={{ num }}&username={{ page_user.username }}">{{ num }}</a>
+                {% endif %}
+
+            {% endfor %}
+
+            {% if page_obj.has_next %}
+                <a class="btn btn-raised btn-sm  waves-effect btn-outline-dark my-4 mx-1" href="?page={{ page_obj.next_page_number }}&username={{ page_user.username }}">Next</a>
+                <a class="btn btn-raised btn-sm  waves-effect btn-outline-dark my-4 mx-1" href="?page={{ page_obj.paginator.num_pages }}&username={{ page_user.username }}">Last</a>
+            {% endif %}
+        </div>
+
+    {% endif %}
+
 
 {% endblock %}
