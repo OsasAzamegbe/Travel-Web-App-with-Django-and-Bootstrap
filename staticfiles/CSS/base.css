@@ -116,6 +116,10 @@ body{
   border-color: rgba(0, 0, 0, 0.5);
 }
 
+.favorite-icon a:hover, a:visited, a:link, a:active {
+  text-decoration: none;
+}
+
 
 /* .sun-moon-icon{
   margin-right: 1em;

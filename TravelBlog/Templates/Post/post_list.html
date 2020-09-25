@@ -10,7 +10,8 @@
                 <img src="{{ post.author.profile.image.url }}" loading="lazy" class="rounded-circle image-thumbnail post-author-image" alt="{{post.author.username}} profile jpg">
             </div>
             <div class="col-11">
-                <h8 class="font-monospace mx-2" ><a class="text-dark" href="{% url 'profile' %}?username={{ post.author.username }}&page=1">@{{ post.author.username }}</a></h8>
+
+                <h8 class="font-monospace mx-4" ><a class="text-dark" href="{% url 'profile' %}?username={{ post.author.username }}&page=1">@{{ post.author.username }}</a></h8>
                 <article class="row my-4 mx-2 flex flex-column">
                     <h6><a class="text-dark" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h6>
                     <p>{{ post.content }}</p>
