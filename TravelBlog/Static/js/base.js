@@ -46,6 +46,6 @@ const sendRequest = async (index, favButton) => {
 [].slice.call(favButtons).forEach((favButton, index) => {favButton.addEventListener('click', (e) => {
     e.preventDefault();
     toggleLike(currentFavorites[index], index, favButton);
-    window.setTimeout(() => {sendRequest(index, favButton)}, 3000);
+    window.setTimeout(() => {sendRequest(index, favButton)}, 500);
 });
 });
