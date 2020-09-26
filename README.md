@@ -14,11 +14,11 @@ https://bini-travel.herokuapp.com/
 ## Sign Up
 https://bini-travel.herokuapp.com/register/
 
-![Web app screenshot 1](screenshots/Screenshot (10).png?raw=true)
+![Web app screenshot 1](screenshots/Screenshot10.png?raw=true)
 
-![Web app screenshot 2](screenshots/Screenshot (12).png?raw=true)
+![Web app screenshot 2](screenshots/Screenshot12.png?raw=true)
 
-![Web app screenshot 1](screenshots/Screenshot (13).png?raw=true)
+![Web app screenshot 1](screenshots/Screenshot13.png?raw=true)
 
-![Web app screenshot 2](screenshots/Screenshot (14).png?raw=true)
+![Web app screenshot 2](screenshots/Screenshot14.png?raw=true)
 #### *TL; DR* - Screenshots of Bini Travel Web App
